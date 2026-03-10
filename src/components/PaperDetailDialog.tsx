@@ -39,10 +39,10 @@ export function PaperDetailDialog({ paper, open, onClose }: Props) {
             </div>
           )}
 
-          {paper.notes && (
+          {paper.note && (
             <div>
               <dt className="text-xs text-muted-foreground">notes</dt>
-              <dd className="mt-1 leading-relaxed">{paper.notes}</dd>
+              <dd className="mt-1 leading-relaxed">{paper.note}</dd>
             </div>
           )}
         </dl>

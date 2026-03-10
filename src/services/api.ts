@@ -1,7 +1,7 @@
 import { Paper, Author, Subject, Stats, PaginationParams, SearchParams, PaperStatus } from '@/types'
 
 //const API_BASE = 'http://localhost:8000/api'
-const API_BASE = import.meta.API_BASE;
+const API_BASE = process.env.API_BASE;
 
 async function request<T>(endpoint: string, options?: RequestInit): Promise<T> {
   const res = await fetch(`${API_BASE}${endpoint}`, {
@@ -81,10 +81,12 @@ export async function getStats(): Promise<Stats> {
 
 // List Authors - GET /api/v1/authors
 export async function listAuthors(): Promise<Author[]> {
-  return request('/v1/authors')
+  const response = await request<{ total: number; authors: Author[] }>('/v1/authors');
+  return response.authors;
 }
 
 // List Subjects - GET /api/v1/subjects
 export async function listSubjects(): Promise<Subject[]> {
-  return request('/v1/subjects')
+  const response = await request<{ total: number; subjects: Subject[] }>('/v1/subjects');
+  return response.subjects;
 }

@@ -60,8 +60,8 @@ function App() {
       ])
       setPapers(papersRes)
       setStats(statsRes)
-      setAuthors(authorsRes.authors)
-      setSubjects(subjectsRes.subjects)
+      setAuthors(authorsRes)
+      setSubjects(subjectsRes)
     } catch (e) {
       console.error(e)
     } finally {

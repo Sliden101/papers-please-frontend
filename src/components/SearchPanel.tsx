@@ -13,9 +13,6 @@ export function SearchPanel({ authors, subjects, onViewPaper }: Props) {
   const [results, setResults] = useState<Paper[]>([])
   const [loading, setLoading] = useState(false)
   const [searched, setSearched] = useState(false)
-
-  const authorsList = Array.isArray(authors) ? authors : []
-  const subjectsList = Array.isArray(subjects) ? subjects : []
   
   const search = async () => {
     setLoading(true)
