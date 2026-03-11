@@ -1,7 +1,7 @@
 import { Paper, Author, Subject, Stats, PaginationParams, SearchParams, PaperStatus } from '@/types'
 
-//const API_BASE = 'http://localhost:8000/api'
-const API_BASE = process.env.API_BASE;
+const API_BASE = 'http://104.167.231.109:8000/api/' // fuck ass env
+//const API_BASE = process.env.API_BASE;
 
 async function request<T>(endpoint: string, options?: RequestInit): Promise<T> {
   const res = await fetch(`${API_BASE}${endpoint}`, {
